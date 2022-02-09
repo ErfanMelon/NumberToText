@@ -1,10 +1,10 @@
 
 Number_text = ['', 'one', 'two', 'three', 'four',
-           'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteenth', 'fourteen',
+           'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'therthen', 'fourteen',
                       'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
-list10 = ['twenty', 'thirty', 'forty', 'fifty',
+list10 = ['twenty', 'therty', 'fourty', 'fifty',
            'sixty', 'seventy', 'eighty', 'ninety']
-hugeamount = ['hundred', 'thousand', 'million', 'billion']
+hugeamount = ['hundered','', 'thousend', 'million', 'billion' ,' trillion ' ,' quadrillion ' ,' quintillion ' ,' sextillion ' ,' septillion ' ,' octillion ' ,' nonillion ' ,' decillion ' ,' undecillion ' ,' duodecillion ' ,' tredecillion ' ,' quattuordecillion ' ,' quindecillion ' ,' sexdecillion ' ,' septendecillion ' ,' octodecillion ' ,' novemdecillion ' ,' vigintillion ' ,' unvigintillion ' ,' duovigintillion ' ,' trevigintillion ' ,' quattuorvigintillion ' ,' quinvigintillion ' ,' sexvigintillion ' ,' septenvigintillion ' ,' octovigintillion ' ,' novemvigintillion ' ,' trigintillion ' ,' untrigintillion ' ,' duotrigintillion ' ,' tretrigintillion ' ,' quattuortrigintillion ' ,' quintrigintillion ' ,' sextrigintillion ' ,' septentrigintillion ' ,' octotrigintillion ' ,' novemtrigintillion ' ,' quadragintillion ' ,' unquadragintillion ' ,' duoquadragintillion ' ,' trequadragintillion ' ,' quattuorquadragintillion ' ,' quinquadragintillion ' ,' sexquadragintillion ' ,' septenquadragintillion ' ,' octoquadragintillion ' ,' novemquadragintillion ' ,' quinquagintillion ' ,' unquinquagintillion ' ,' duoquinquagintillion ' ,' trequinquagintillion ' ,' quattuorquinquagintillion ' ,' quinquinquagintillion ' ,' sexquinquagintillion ' ,' septenquinquagintillion ' ,' octoquinquagintillion ' ,' novemquinquagintillion ' ,' sexagintillion ' ,' unsexagintillion ' ,' duosexagintillion ' ,' tresexagintillion ' ,' quattuorsexagintillion ' ,' quinsexagintillion ' ,' sexsexagintillion ' ,' septensexagintillion ' ,' octosexagintillion ' ,' novemsexagintillion ' ,' septuagintillion ' ,' unseptuagintillion ' ,' duoseptuagintillion ' ,' treseptuagintillion ' ,' quattuorseptuagintillion ' ,' quinseptuagintillion ' ,' sexseptuagintillion ' ,' septenseptuagintillion ' ,' octoseptuagintillion ' ,' novemseptuagintillion ' ,' octogintillion ' ,' unoctogintillion ' ,' duooctogintillion ' ,' treoctogintillion ' ,' quattuoroctogintillion ' ,' quinoctogintillion ' ,' sexoctogintillion ' ,' septenoctogintillion ' ,' octooctogintillion ' ,' novemoctogintillion ' ,' nonagintillion ' ,' unnonagintillion ' ,' duononagintillion ' ,' trenonagintillion ' ,' quattuornonagintillion ' ,' quinnonagintillion ' ,' sexnonagintillion ' ,' septennonagintillion ' ,' octononagintillion ' ,' novemnonagintillion ' ,' centillion ']# Complete more items !
 
 i = int(input("Please enter a number: "))
 
@@ -18,7 +18,7 @@ def numtotext100(Number_text, list10, hugeamount, i):
 
     if(size == 1):
         if i == 0:
-            print('Zero')
+            pass
         else:
             out = Number_text[i]
 
@@ -72,14 +72,20 @@ list_num=newlist
 
 list_num=[int(n) for n in list_num]
 
+out=""
 if len(list_num)==1:
     out=numtotext100(Number_text, list10, hugeamount, list_num[0])
-elif len(list_num)==2:
-    out=numtotext100(Number_text, list10, hugeamount, list_num[0])+" "+hugeamount[1]+" "+numtotext100(Number_text, list10, hugeamount, list_num[1])
-elif len(list_num)==3:
-    out=numtotext100(Number_text, list10, hugeamount, list_num[0])+" "+hugeamount[2]+" "+numtotext100(Number_text, list10, hugeamount, list_num[1])+" "+hugeamount[1]+" "+numtotext100(Number_text, list10, hugeamount, list_num[2])
 else:
-    out=None
-print(out)
+    n=1
+    s=len(list_num)
+    while n<=len(list_num):
+        
+        if numtotext100(Number_text, list10, hugeamount, list_num[n-1])!="":
+            out+=numtotext100(Number_text, list10, hugeamount, list_num[n-1])+" "+hugeamount[s]+" "
+        n=n+1
+        s=s-1
 
-print('Press any key to continue ...')
+if(out==""):
+    out='Zero'
+print(f'The number is : {out}')
+input()
